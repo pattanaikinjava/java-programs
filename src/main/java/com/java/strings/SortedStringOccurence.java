@@ -25,7 +25,7 @@ public class SortedStringOccurence {
         char to_characters[] =Input.toCharArray();
         Map<Character,Integer> occurenceOfCharacters = new HashMap<>();
         for(var to_char : to_characters){
-            occurenceOfCharacters.put(to_char, occurenceOfCharacters.getOrDefault(to_char,0)+1);
+             occurenceOfCharacters.put(to_char, occurenceOfCharacters.getOrDefault(to_char,0)+1);
         }
         System.out.println("occurence of each charcaters :"+occurenceOfCharacters);
         List<Character> listOfSorted = new ArrayList<>(occurenceOfCharacters.keySet());
