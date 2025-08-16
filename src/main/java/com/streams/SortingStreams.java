@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class SortingStreams
 {
-    public static List<Employee> setModelValue(){
+    public static List<Employee> modelDTO(){
         List<Employee> empList = Arrays.asList(
                 new Employee(101,"Albert",50000.0d,"Technical analyst"),
                 new Employee(106,"Ram",52000.0d,"Technical analyst"),
@@ -24,7 +24,7 @@ public class SortingStreams
     }
     public static void main(String[] args) {
         //Model class Examples
-        List<Employee>employees =  setModelValue();
+        List<Employee>employees =  modelDTO();
         //Listing out employees whose salary more than 1,00,000
         /*employees.
                 stream().
