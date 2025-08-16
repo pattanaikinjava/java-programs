@@ -1,6 +1,9 @@
 package com.streams;
 
-import java.util.*;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 // To check if the list of numbers contain any prime numbers

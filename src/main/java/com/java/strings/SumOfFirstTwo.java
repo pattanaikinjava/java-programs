@@ -5,14 +5,11 @@ package com.java.strings;
  * 87,45,35,74,325,98
  *  //87 + 45*/
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Stream;
 public class SumOfFirstTwo
 {
         public static void main(String[] args) {
+            //Immutable List
             List<Integer> numbersList = List.of(87,45,35,74,325,98); //87 + 45
             System.out.println(numbersList.stream().limit(2).mapToInt(Integer::intValue).sum());
 
