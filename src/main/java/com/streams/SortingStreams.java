@@ -4,6 +4,7 @@ import com.streams.model.Employee;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class SortingStreams
@@ -44,6 +45,23 @@ public class SortingStreams
                         obj ->
                                 System.out.println(obj.getEmpName())
                 );
+        //listing out employees based on 3rd highest salary...
+        Optional<Double> NthHighestSalary =  employees.
+                stream().
+                map(Employee:: getEmpSalary).
+                distinct().
+                sorted(Comparator.reverseOrder()).
+                skip(3 -1).
+                findFirst();
+
+        if(NthHighestSalary.isPresent()){
+            System.out.println("3rd Highest salary "+NthHighestSalary.get());
+            List<Employee> empWithNthHighest = employees.stream()
+                    .filter(e -> e.getEmpSalary().equals(NthHighestSalary.get()))
+                    .collect(Collectors.toList());
+            System.out.println("Employee details "+empWithNthHighest);
+        }
+
         // Examples
         List<Integer> list = Arrays.asList(11, 9, 33, 40, 15, 26, 70, 20, 19, 10);
         list = list.
