@@ -2,10 +2,9 @@ package com.streams;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
-public class BasicsStreams
+public class BasicLevel
 {
     public static void main(String[] args) {
         List<Integer> list = List.of(1, 2, 3, 4, 5);
