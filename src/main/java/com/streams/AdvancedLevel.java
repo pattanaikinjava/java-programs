@@ -144,5 +144,32 @@ public class AdvancedLevel
                 )
         );
         System.out.println(elementOccur);
+
+        /* 11. Count the Occurrences of Each Digit in a String */
+        String inputStr = "hello 123 world 456";
+        String inputArr[] = inputStr.split(" ");
+        Map<Integer,Long> occurence = new LinkedHashMap<>();
+        List<Integer> nubers = new ArrayList<>();
+        for(String element: inputArr){
+           try{
+              int number = Integer.parseInt(element);
+               nubers.add(number);
+           }
+           catch(Exception e){
+               continue;
+           }
+        }
+        System.out.println(nubers);
+        for(Integer a : nubers){
+            String element = String.valueOf(a);
+            for(int i=0; i<element.length(); i++){
+                occurence.put(Character.getNumericValue(element.charAt(i)), occurence.getOrDefault(element.charAt(i),0l)+1);
+            }
+        }
+        System.out.println(occurence);
+       for(Map.Entry<Integer,Long> each: occurence.entrySet()){
+          String output =  each.getKey() + " occurs for "+ each.getValue() + " time.";
+          System.out.println(output);
+       }
     }
 }
