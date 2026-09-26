@@ -1,15 +1,44 @@
 package com.program.basics;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class SortedArrysEle
 {
 
     public static void main(String[] args) {
         int[] arr = {42, 7, 91, 15, 63, 28, 84, 3, 56, 19};
-        doBubbleSort(arr);
+
+        /*
+            Bubble sort is all about swaping of 2 adjacent elements if first element is greater than the second element
+         */
+//        doBubbleSort(arr);
+        /*
+          Insertion sort is all about inserting the element to LEFT side if first element is greater than the second element.
+          it is right shifted array
+         */
+        doInsertionSort(arr);
     }
 
+    static void doInsertionSort(int arr[]){
+        int len = arr.length;
+        int j, tmp;
+        for(int i=1; i<len; i++){
+             j = i-1;
+             tmp = arr[i];
+             while(j>=0 && tmp <=arr[j]){
+                 arr[j+1] = arr[j];
+                 j = j-1;
+             }
+             arr[j+1] = tmp;
+        }
+
+        //After Sorting
+        for(int b : arr){
+            System.out.print(b + " ");
+        }
+
+    }
     static void doBubbleSort(int arr[]){
        int len = arr.length;
        Boolean toSwap = null;
@@ -24,7 +53,7 @@ public class SortedArrysEle
             }
                 if(!toSwap){ break;}
         }
-
+    //After Sorting
         for(int n : arr){
             System.out.print(n + " ");
         }
